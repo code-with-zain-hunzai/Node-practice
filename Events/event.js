@@ -106,9 +106,16 @@ celebrity.on('race', (results) => {
 
 });
 
+celebrity.on('race', (results) => {
+  if (results === 'lost') {
+    console.log("oops you lost")
+  }
+})
+
 process.on('exit', (code) => {
   console.log('Process exit event with code:', code);
 });
 
+
 celebrity.emit('race', 'win');
-celebrity.emit('race', 'lsot');
+celebrity.emit('race', 'lost');
